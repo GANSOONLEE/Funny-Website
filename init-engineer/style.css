@@ -1,21 +1,202 @@
-*{
+/* 清除樣式 */
+
+* {
     padding: 0;
     margin: 0;
 }
 
-body{
+body {
     box-sizing: border-box;
+    transition: all .21s ease;
 }
 
-.navbar{
-    height: 8vh;
-    padding: 0 2rem;
-    background: #fcfcfc;
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+}
+
+/* 變量 */
+:root {
+
+    --biggest-font: 1.4rem;
+    --bigger-font: 1.2rem;
+    --big-font: 1rem;
+    --normal-font: .8rem;
+    --small-font: .6rem;
+    --smaller-font: .4rem;
+    --smallest-font: .2rem;
+
+    --font-color-link-light: black;
+    --font-color-link-light-hover: #001e60;
+
+    --color-gradient-primary: #00143e;
+    --color-gradient-second: #001e60;
+}
+
+:root[theme='dark'] {
+    --font-color-link-light: white;
+    --font-color-link-light-hover: #b3cdff;
+
+    --color-gradient-primary: #e9f0ff;
+    --color-gradient-second: #cfdeff;
+}
+
+/* 自定義類 */
+.flex-row {
     display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
     align-items: center;
 }
 
-.navbar .logo{
+/* debug */
+
+:root[theme='dark'] body {
+    background-color: #000c25;
+}
+
+/* 樣式設定 */
+
+.navbar {
+    /* position: sticky; */
+    height: 8vh;
+    padding: 0 2rem;
+    background: #fcfcfc;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+}
+
+:root[theme='dark'] .navbar {
+    background: #00133c;
+}
+
+.navbar .logo {
+    content: url('resource/light-logo.svg');
     height: 4vh;
     width: auto;
 }
+
+:root[theme='dark'] .navbar .logo {
+    content: url('resource/dark-logo.svg');
+}
+
+.navbar .navbar-links,
+.navbar .user-links {
+    column-gap: 1.6rem;
+    font-size: var(--big-font);
+}
+
+.user-links {
+    padding: 0 2.3rem;
+}
+
+.navbar .navbar-link,
+.navbar .user-link {
+    padding: .4rem .8rem;
+    background-image: linear-gradient(45deg, var(--color-gradient-primary), var(--color-gradient-second));
+    background-size: 0 3px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    color: var(--font-color-link-light);
+    transition: all .1s ease-in-out;
+}
+
+.navbar .navbar-link:hover,
+.navbar .user-link:hover {
+    background-size: 100% 3px;
+    color: var(--font-color-link-light-hover);
+}
+
+.button-theme {
+    position: absolute;
+    top: 3vh;
+    right: 4vh;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: var(--font-color-link-light);
+}
+
+.button-theme::before {
+    content: '\f186';
+}
+
+:root[theme='dark'] .button-theme::before {
+    content: '\f185';
+}
+
+/* loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+#loader::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+}
+
+.animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .animation-letter .active{
+    font-size: 48px;
+    animation-name: scale-up-down;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes scale-up-down {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.5);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
