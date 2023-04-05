@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+.navbar{
+    height: 8vh;
+    padding: 0 2rem;
+    background: #fcfcfc;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo{
+    height: 4vh;
+    width: auto;
+}
