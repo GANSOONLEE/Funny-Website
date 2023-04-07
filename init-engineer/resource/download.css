@@ -1,0 +1,22 @@
+@import url('../style.css');
+
+.download{
+    width: 100%;
+}
+
+.download .download-body{
+    padding: .8rem 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: none;
+    text-align: center;
+}
+.download .download-body .version{
+    padding: .8rem 2rem;
+    appearance: none;
+}
+.download .download-body .version > option{
+    text-align: center;
+}
