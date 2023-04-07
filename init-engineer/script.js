@@ -35,5 +35,12 @@ for (let i = 0; i < menuBtn.length; i++){
     });
 }
 
+// 按鈕
+var downloadBtn = document.querySelector('.download-btn');
+const list = document.querySelector('.version-list');
+downloadBtn.addEventListener('click', () => {
+    list.classList.toggle('show');
+});
+
 
 

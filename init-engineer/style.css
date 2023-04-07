@@ -3,7 +3,6 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -280,17 +279,11 @@ textarea {
 }
 
 @media screen and (max-width: 960px) {
-    .user-links {
-        padding: 0 1.2rem;
-    }
     .animation-letter {
         padding: 0 1.6rem;
     }
 }
 @media screen and (max-width: 683px) {
-    .user-links {
-        padding: 0 1rem;
-    }
     .animation-letter {
         padding: 0 1.2rem;
     }
