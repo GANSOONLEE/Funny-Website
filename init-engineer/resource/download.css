@@ -1,4 +1,4 @@
-@import url('../style.css');
+
 
 .navbar .logo {
     content: url('light-logo.svg');
@@ -48,12 +48,13 @@ img.background{
     transition: all .1s ease-in-out;
     font-size: 1.3rem;
     border-radius: .2rem;
-    width: 12rem;
+    width: 10%;
     height: 4rem;
     background-color: hsl(122, 43%, 47%);
     color: white;
     border: none;
     cursor: pointer;
+    min-width: 150px;
 }
 .download .download-body > button:hover{
     background-color: hsl(122, 52%, 49%);
@@ -62,22 +63,27 @@ img.background{
     background-color: hsl(122, 52%, 37%);
 }
 .download-body .version-list{
+    min-width: 150px;
     box-sizing: border-box;
     display: none;
     flex-direction: column;
     color: white;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .3);
     width: inherit;
     transition: all .1s ease-in-out;
-    width: 11%;
+    width: 10%;
 }
 .download-body .version{
+    cursor: pointer;
     font-size: 1.2rem;
-    padding: 2rem .2rem;
+    padding: 2rem 0;
     row-gap: 2.2rem;
 }
 .download-body .version:hover{
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .5);
+}
+.download-body .version:active{
+    background-color: rgba(0, 0, 0, .7);
 }
 .download-body .version-list.show{
     display: flex;

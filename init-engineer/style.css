@@ -3,6 +3,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -116,7 +117,7 @@ textarea {
 }
 
 :root[theme='dark'] .navbar {
-    background: #00133c;
+    background: #000a20;
 }
 
 .navbar .logo {
